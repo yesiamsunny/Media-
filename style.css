@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    border: 1px solid black;
+    background-color: yellow;
+    height: 650px;
+    width: 304px;
+    
+    grid-gap: 4px;
+    display: grid;
+    grid-template-rows: 20px 1fr 20px;
+    grid-template-columns: 100px 200px;
+
+    grid-template-areas: 
+    "ht ht"
+    "side main"
+    "ft ft";
+}
+
+.box{
+    border: 1px solid red;
+    background-color: pink;
+}
+
+#header{
+    grid-area: ht;
+}
+
+#sidebox{
+    grid-area: side;
+}
+
+#content{
+    grid-area: main;
+}
+
+#footer{
+    grid-area: ft;
+}
+
+/* @media(max-width:400px){
+    .container{
+        grid-gap: 100px;
+    }
+} */
+/* jab size 500px se jada hai toh upper codes will be followed but when the size is lower then 500px then lower codes will be followed */
+@media(max-width:500px){
+    .container{
+        grid-template-rows: 20px 1fr 1fr 20px;
+        grid-template-columns: 1fr;
+
+        grid-template-areas: 
+        "ht"
+        "side"
+        "main"
+        "ft";
+    }
+}
